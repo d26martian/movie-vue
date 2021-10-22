@@ -1,0 +1,11 @@
+.sidebar {
+  width: 100%;
+  max-width: 280px;
+  height: 100vh;
+  flex-shrink: 0;
+  box-shadow: 0 0px 20px #ccc;
+
+  &_body {
+    padding: 55px 14px;
+  }
+}

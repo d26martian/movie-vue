@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <component :is="layout">
+      <router-view/>
+    </component>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import EmptyLayout from '@/layouts/EmptyLayout'
+import MainLayout from '@/layouts/MainLayout'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    EmptyLayout,
+    MainLayout
+  },
+  computed: {
+    layout() {
+      console.log(this.$route.meta);
+      return (this.$route.meta.layout || 'empty') + '-layout'
+    }
+  },
+  async mounted() {
+    await this.$store.dispatch('fetchMovies');
+  },
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
 }
 </style>
