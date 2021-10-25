@@ -2,15 +2,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 50px;
   
   &_title {
+    position: relative;
     font-size: 40px;
     text-transform: uppercase;
     color:#5a5a5a;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 320px;
+      height: 1px;
+      position: absolute;
+      top: 50%;
+      left: calc(50% - -105px);
+    background-color: #d3d3d3;
+    margin-top: -1px;
+    }
   }
 
   &_items {
     display: flex;
+  }
+
+  &_search {
+    margin-right: 10px;
   }
 
   &_btn-group,

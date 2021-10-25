@@ -5,12 +5,21 @@
     <div class="sidebar_body">
       <List title="Видео">
         <template v-slot:body>
-          <p>List</p>
+          <Checkbox text="Акцiя"></Checkbox>
+          <Checkbox text="Популярнi"></Checkbox>
+          <Checkbox text="Новинки"></Checkbox>
         </template>
       </List>
       <List title="Теми">
         <template v-slot:body>
-          <p>List</p>
+          <div class="sidebar_list">
+            <a href="">Всi теми</a>
+            <a href="">Акцизный податок</a>
+            <a href="">Валюта</a>
+            <a href="">Виробництво i собiвартiсть</a>
+            <a href="">Вiдпустки</a>
+            <a href="">Вiдрядження</a>
+          </div>
         </template>
       </List>
     </div>
@@ -19,12 +28,14 @@
 
 <script>
 import List from '@/components/List/List'
+import Checkbox from '@/ui/Checkbox/Checkbox'
 
 export default {
   name: 'sidebar',
   data: () => ({}),
   components: {
-    List
+    List,
+    Checkbox
   },
   methods: {},
   computed: {},

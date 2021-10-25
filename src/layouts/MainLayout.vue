@@ -3,7 +3,6 @@
     <Sidebar></Sidebar>
 
     <main class="app-content">
-      <NavBar></NavBar>
       <div class="app-page">
         <router-view />
       </div>
@@ -12,7 +11,6 @@
 </template>
 
 <script>
-import NavBar from '@/components/NavBar/NavBar'
 import Sidebar from '@/components/Sidebar/Sidebar'
 
 export default {
@@ -22,8 +20,12 @@ export default {
     loading: true
   }),
   components: {
-    NavBar,
     Sidebar
+  },
+  methods: {
+    handlerClick(name) {
+      console.log('icon', name)
+    }
   },
   mounted() {},
   computed: {},
@@ -36,10 +38,8 @@ export default {
   height: 100vh;
 }
 .app-content {
+  width: 100%;
   overflow: scroll;
   padding: 25px;
-}
-.app-page {
-  padding-top: 50px;
 }
 </style>

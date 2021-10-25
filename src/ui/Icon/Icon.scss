@@ -1,0 +1,26 @@
+.icon {
+  $this: &;
+  width: 27px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  opacity: .3;
+  transition: opacity .3s ease;
+
+  &:hover {
+    opacity: .5;
+  }
+
+  &_grid {
+    background-image: url('../../assets/grid.png');
+  }
+  &_list {
+    background-image: url('../../assets/list.png');
+  }
+
+  &_active {
+    opacity: 1;
+  }
+}

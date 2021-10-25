@@ -1,5 +1,6 @@
+<style src="./Icon.scss" lang="scss"></style>
 <template>
-  <div :class="classes"></div>
+  <div :class="classes" @click="$emit('action', name)"></div>
 </template>
 <script>
 export default {
@@ -16,26 +17,9 @@ export default {
       return {
         'icon': true,
         'icon_grid': this.name === "grid",
-        'iconlist': this.name === "list",
+        'icon_list': this.name === "list",
       };
     },
   }
 }
 </script>
-<style lang="scss">
-.icon {
-  $this: &;
-  width: 27px;
-  height: 27px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  &_grid {
-    background-image: url('../../assets/grid.png');
-  }
-  &_list {
-    background-image: url('../../assets/list.png');
-  }
-}
-</style>

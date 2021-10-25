@@ -7,8 +7,8 @@
         <Input></Input>
       </div>
       <div class="navbar_btn-group">
-        <Icon name="grid"></Icon>
-        <Icon name="list"></Icon>
+        <Icon name="grid" @action="handlerClick"></Icon>
+        <Icon name="list" @action="handlerClick"></Icon>
       </div>
     </div>
   </div>
@@ -25,7 +25,11 @@ export default {
     Input,
     Icon
   },
-  methods: {},
+  methods: {
+    handlerClick(name) {
+      this.$emit('view', name)
+    }
+  },
   computed: {},
   mounted() {},
 }

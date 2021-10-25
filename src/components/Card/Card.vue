@@ -1,6 +1,6 @@
 <style src="./Card.scss" lang="scss"></style>
 <template>
-  <div class="card">
+  <div :class="classes">
     <div class="card_header">
       <img :src="movie.covers.main" alt="">
     </div>
@@ -20,7 +20,7 @@ export default {
   components: {
     Button
   },
-  props: ['movie'],
+  props: ['movie', 'view'],
   data: () => ({}),
   // watch: {
   //   movies: {
@@ -31,7 +31,14 @@ export default {
   //     deep: true
   //   }
   // },
-  computed: {},
+  computed: {
+    classes() {
+      return {
+        'card': true,
+        'card-list': this.view === "list",
+      };
+    },
+  },
   mounted() {},
   methods: {
     handleClick() {

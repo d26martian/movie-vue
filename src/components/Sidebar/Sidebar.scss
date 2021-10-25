@@ -8,4 +8,10 @@
   &_body {
     padding: 55px 14px;
   }
+
+  &_list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
